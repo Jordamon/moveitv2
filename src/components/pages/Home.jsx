@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../header/Header';
-// import Featured from '../featured/Featured';
-// import Footer from '../footer/Footer';
+import Featured from '../featured/Featured';
+import Footer from '../footer/Footer';
 import '../../App.css';
 import './Home.css';
 
@@ -12,8 +12,8 @@ function Home() {
           <div className='header-home'>
             <Header />
             </div>
-          {/* <Featured />
-          <Footer /> */}
+          <Featured />
+          <Footer />
         </div>
       </div>
     );

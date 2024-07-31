@@ -1,0 +1,61 @@
+/* style rules for shopping cart */
+.shopping-cart{
+    display: grid;
+    grid-template-columns: repeat(1, 320px);
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+.cart-item{
+    border: 2px solid black;
+    border-radius: 5px;
+    display: flex;
+}
+.title-price-x{
+    width: 195px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title-price{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.cart-item-price{
+    background-color: #212529;
+    color: white;
+    padding: 3px, 6px;
+    border-radius: 4px;
+}
+.buttons{
+    display: flex;
+    gap: 10px;
+}
+/* style rules for label and some buttons in cart */
+.text-center{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.HomeBtn, .checkout,.removeAll{
+    color: white;
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+.checkout{
+    background-color: #9fcf9f;
+}
+.removeAll{
+    background-color: red;
+}
+.bi-x-lg{
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+.check-clear{
+    margin: 10px;
+}
