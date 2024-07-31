@@ -1,7 +1,7 @@
-import react from 'react';
+// import react from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import Navbar from './components/navbar/Navbar';
-// import Home from './components/pages/Home';
+import Home from './components/pages/Home';
 // import Account from './components/pages/account/Account';
 // import Contact from './components/pages/contact/Contact';
 // import Products from './components/pages/products/Products';
@@ -17,7 +17,7 @@ function App() {
       {/* <Navbar /> */}
       <Routes>
       {/* <CartProvider> */}
-      {/* <Route path='/' element={<Home />} /> */}
+      <Route path='/' element={<Home />} />
         {/* <Route path='/Products' element={<Products />} />
         <Route path='/Contact' element={<Contact />} />
         <Route path='/Account' element={<Account />} />
