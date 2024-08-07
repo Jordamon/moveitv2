@@ -1,0 +1,77 @@
+.icon.completed::before {
+    content: 'f00c'; /* Unicode for check icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+  }
+  .icolumn{
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+h2{
+    font-size: 20px;
+}
+h3{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.shippingOption{
+  width: 100%;
+}
+.shippingDetails{
+  display: flex;
+  flex-direction: row;
+}
+.standardShipping{
+  border: solid #9fc6d8 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nextDayShipping{
+  border: solid #9fc6d8 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shipping{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.cartPreview{
+  margin: 20px;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid white;
+}
+input[type="checkbox"]:checked {
+  background-color: black;
+  padding: 3px;
+}
+.outerCircle{
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}

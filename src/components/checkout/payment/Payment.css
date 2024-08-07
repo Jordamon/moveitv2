@@ -1,0 +1,33 @@
+.icolumn{
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+h2{
+    font-size: 20px;
+}
+.paymentBody{
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: columns;
+    justify-content: center;
+}
+h2{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+.paymentFeature{
+    width: 600px;
+    height: 250px;
+    margin: auto;
+    border: solid 2px black;
+}
+.checkoutNavBtns{
+    padding-top: 25px;
+}
