@@ -1,0 +1,152 @@
+.account-page {
+    padding: 0px 0;
+    background-image: linear-gradient(rgba(255, 249, 249, 0.184), rgba(62, 61, 61, 0.75)), url("../../images/Background.jpg");
+    height: 800px;
+    background-size: cover;
+  }
+
+  .account-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    padding-top: 60px;
+  }
+  
+  .account-page img {
+    margin: auto;
+    float: right;
+    height: 500px;
+    width: 800px;
+  }
+  
+  .form-container {
+    background: #fff;
+    width: 30px;
+    height: 800px;
+    position: relative;
+    text-align: center;
+    padding: 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 30px;
+  }
+  
+  .form-container span {
+    font-weight: bold;
+    padding: 0 10px;
+    color: #555;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+  }
+  
+  .form-btn {
+    display: inline-block;
+  }
+  
+  .form-container form {
+    max-width: 300px;
+    padding: 0 0 0px 0;
+    position: absolute;
+    transition: transform 1s;
+  }
+  
+  form input {
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+  }
+  
+  form .btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+  }
+  
+  form .btn:focus {
+    outline: none;
+  }
+  
+  #LoginForm {
+    left: -300px;
+  }
+  
+  #RegForm {
+    left: 0;
+  }
+  
+  form a {
+    font-size: 12px;
+  }
+  
+  #Indicator {
+    width: 100px;
+    border: none;
+    background: #9fc6d8;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(100px);
+    transition: transform 1s;
+  }
+
+  
+  .form-container form button {
+    padding: 15px;
+    background: #9fc6d8;
+    color: #fff;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    margin: 0 auto;
+    border-radius: 30px;
+  }
+  
+  hr {
+    background-color: #9fc6d8;
+    height: 6px;
+    border: none;
+    width: 100px;
+    border-radius: 10px;
+    transition: transform 1s;
+  }
+  .message {
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  
+  .success {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .error {
+    background-color: #f44336;
+    color: white;
+  }
+  @media screen and (max-width: 600px) {
+    .account-shoes{
+      display: none;
+    }
+    .form-container{
+      position: absolute;
+      left: -40px;
+      top: -210px;
+    }
+    .account-page{
+      height: 600px;
+    }
+    .form-container .btn{
+      margin-left: -200px;
+      margin-top: 230px;
+      z-index: 2;
+      }
+  }
