@@ -1,17 +1,8 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { CartContext } from '../cartContext/CartContext';
 
 const ShopGenerator = ({ items }) => {
   const { updateCartAmount } = useContext(CartContext);
-  const [basket] = useState(() => {
-    const savedBasket = JSON.parse(localStorage.getItem('data')) || [];
-    return savedBasket;
-  });
-
-  useEffect(() => {
-    localStorage.setItem('data', JSON.stringify(basket));
-    updateCartAmount();
-  }, [basket, updateCartAmount]);
 
   return (
     <div className="shop">

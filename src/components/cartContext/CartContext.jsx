@@ -1,4 +1,4 @@
-import React, { createContext, useState, useCallback } from 'react';
+import React, { createContext, useState, useCallback, useEffect } from 'react';
 
 export const CartContext = createContext();
 
@@ -8,16 +8,11 @@ export const CartProvider = ({ children }) => {
     return savedBasket;
   });
 
-  // const [errorMessage, setErrorMessage] = useState('');
-
   const increment = useCallback((id, quantity, size) => {
     if (!size) {
       // setErrorMessage('Please select a size before adding to the cart.');
       return;
     }
-
-    // If a size is selected, clear any previous error messages
-    // setErrorMessage('');
 
     setBasket((prevBasket) => {
       const updatedBasket = [...prevBasket];
@@ -38,8 +33,7 @@ export const CartProvider = ({ children }) => {
 
   const updateCartAmount = useCallback(() => {
     const totalItems = basket.reduce((total, item) => total + parseInt(item.quantity), 0);
-    let cartIcon = document.getElementById('cartAmount');
-    cartIcon.innerHTML = totalItems;
+    return totalItems;
   }, [basket]);
 
   const setSize = useCallback((id, size) => {
@@ -55,9 +49,14 @@ export const CartProvider = ({ children }) => {
     });
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('data', JSON.stringify(basket));
+  }, [basket]);
+
   return (
     <CartContext.Provider value={{ basket, setBasket, increment, updateCartAmount, setSize }}>
       {children}
+      <div id="cartAmount">{updateCartAmount()}</div>
     </CartContext.Provider>
   );
 };
