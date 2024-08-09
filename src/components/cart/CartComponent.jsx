@@ -3,107 +3,85 @@ import ShopItemsData from '../shop/Data.jsx';
 import './CartComponent.css';
 import { CartContext } from '../cartContext/CartContext';
 import { Link } from 'react-router-dom';
-// import { shippingCost } from '../checkout/shipping/Shipping.jsx';
 
-const CartComponent = ({ shippingCost }) => {
+const CartComponent = ({ shippingCost = 0 }) => {
   const { basket, increment, setBasket, updateCartAmount } = useContext(CartContext);
 
   const decrement = (id, size) => {
     setBasket((prevBasket) => {
-      const updatedBasket = [...prevBasket];
-      const itemIndex = updatedBasket.findIndex((item) => item.id === id && item.size === size);
-  
-      if (itemIndex !== -1) {
-        if (updatedBasket[itemIndex].quantity > 1) {
-          updatedBasket[itemIndex] = {
-            ...updatedBasket[itemIndex],
-            quantity: updatedBasket[itemIndex].quantity - 1,
-          };
-        } else {
-          updatedBasket.splice(itemIndex, 1); // Remove the item from the cart if the quantity is 1
-        }
-      }
-  
+      const updatedBasket = prevBasket.map((item) => 
+        item.id === id && item.size === size && item.quantity > 1 
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      ).filter(item => item.quantity > 0);
+      
       return updatedBasket;
     });
   };
 
   const removeItem = (id, size) => {
-    setBasket((prevBasket) => {
-      const filteredBasket = prevBasket.filter((item) => item.id !== id || item.size !== size);
-      return filteredBasket;
-    });
+    setBasket((prevBasket) => prevBasket.filter((item) => item.id !== id || item.size !== size));
   };
-  
-  
 
   const clearCart = () => {
     setBasket([]);
   };
 
-  const generateCartItems = () => {
-    if (basket.length !== 0) {
-      return basket.map((item) => {
-        let { id, quantity, size } = item; // Include the 'size' property
-        let product = ShopItemsData.find((product) => product.id === id) || {};
-        let { img, name, price } = product;
-        const cartItemKey = `${id}-${size}`; // Create a unique key using id and size
-        return (
-          <div className="cart-item" key={cartItemKey}>
-            <img width="100" src={img} alt="" />
-            <div className="details">
-              <div className="title-price-x">
-                <h4>
-                  <p>{name}</p>
-                  <p>£ {price}</p>
-                  <p>Size: {size}</p> {/* Display the selected size */}
-                </h4>
-                <i onClick={() => removeItem(id, size)} className="bi bi-x-lg"></i>
-              </div>
-  
-              <div className="buttons">
-                <h4>Quantity:</h4>
-                <i onClick={() => decrement(id, size)} className="bi bi-dash-lg"></i>
-                <div id={id} className="quantity">
-                  {item.quantity}
-                </div>
-                <i onClick={() => increment(id, 1, size)} className="bi bi-plus-lg"></i>
-              </div>
+  const CartItem = ({ id, quantity, size }) => {
+    const product = ShopItemsData.find((product) => product.id === id) || {};
+    const { img, name, price } = product;
 
-              <h3>Total: £ {item.quantity * price}</h3>
-            </div>
-          </div>
-        );
-      });
-    } else {
-      return (
-        <>
-          <div id="shopping-cart"></div>
-          <div id="label" className="text-center">
-            <h2>Cart is empty</h2>
-            <a href="/">
-              <button className="HomeBtn">Back to home</button>
-            </a>
-          </div>
-        </>
-      );
+    if (!name || !price) {
+      return null;
     }
+
+    const cartItemKey = `${id}-${size}`;
+
+    return (
+      <div className="cart-item" key={cartItemKey}>
+        <img width="100" src={img} alt={name} />
+        <div className="details">
+          <div className="title-price-x">
+            <h4>
+              <p>{name}</p>
+              <p>£ {price}</p>
+              <p>Size: {size}</p>
+            </h4>
+            <i onClick={() => removeItem(id, size)} className="bi bi-x-lg"></i>
+          </div>
+
+          <div className="buttons">
+            <h4>Quantity:</h4>
+            <i onClick={() => decrement(id, size)} className="bi bi-dash-lg"></i>
+            <div id={id} className="quantity">
+              {quantity}
+            </div>
+            <i onClick={() => increment(id, 1, size)} className="bi bi-plus-lg"></i>
+          </div>
+
+          <h3>Total: £ {quantity * price}</h3>
+        </div>
+      </div>
+    );
   };
 
-  const totalAmount = () => {
-    if (basket.length !== 0) {
-      const totalItems = basket.reduce((total, item) => total + item.quantity, 0);
-      const amount = basket.reduce((total, item) => {
-        let product = ShopItemsData.find((prod) => prod.id === item.id) || {};
-        return total + item.quantity * product.price;
-      }, 0);
-  
-      const itemsText = totalItems === 1 ? 'item' : 'items';
-  
-      const totalBill = amount + (shippingCost || 0); // Add the shipping cost to the total amount, default to 0 if shippingCost is not provided
+  const totalAmount = basket.reduce((total, item) => {
+    const product = ShopItemsData.find((prod) => prod.id === item.id) || {};
+    return total + item.quantity * (product.price || 0);
+  }, 0);
 
-  
-      return (
+  const totalItems = basket.reduce((total, item) => total + item.quantity, 0);
+  const itemsText = totalItems === 1 ? 'item' : 'items';
+  const totalBill = totalAmount + shippingCost;
+
+  useEffect(() => {
+    localStorage.setItem('data', JSON.stringify(basket));
+    updateCartAmount();
+  }, [basket, updateCartAmount]);
+
+  return (
+    <div>
+      {basket.length > 0 ? (
         <div id="label" className="text-center">
           <h2>Total Bill: £ {totalBill}</h2>
           <p>Shipping: £ {shippingCost}</p>
@@ -115,21 +93,19 @@ const CartComponent = ({ shippingCost }) => {
             Clear Cart
           </button>
         </div>
-      );
-    } else {
-      return null;
-    }
-  };
-
-  useEffect(() => {
-    localStorage.setItem('data', JSON.stringify(basket));
-    updateCartAmount(); // Call the function to update the cart amount
-  }, [basket, updateCartAmount]);
-
-  return (
-    <div>
-      {totalAmount()}
-      <div className="shopping-cart">{generateCartItems()}</div>
+      ) : (
+        <div id="label" className="text-center">
+          <h2>Cart is empty</h2>
+          <Link to="/">
+            <button className="HomeBtn">Back to home</button>
+          </Link>
+        </div>
+      )}
+      <div className="shopping-cart">
+        {basket.map((item) => (
+          <CartItem key={`${item.id}-${item.size}`} {...item} />
+        ))}
+      </div>
     </div>
   );
 };
