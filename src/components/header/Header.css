@@ -1,5 +1,5 @@
 .home{
-    background-image: linear-gradient(rgba(255, 249, 249, 0.184),rgba(62, 61, 61, 0.75)), url("../../images/Background.jpg");
+    background-image: linear-gradient(rgba(255, 249, 249, 0.184),rgba(180, 176, 176, 0.213)), url("../../images/Background.jpg");
     height: 80vh;
     background-size: cover;
     padding-left: 25px;
@@ -38,24 +38,30 @@ margin-top: 90px;
     padding: auto;
 }
 .col-2 h1{
-    font-size: 50px;
-    line-height: 60px;
-    color: black;
+    font-size: 80px;
+    line-height: 100px;
+    color: #9fc6d8;
     font-weight: bolder;
     padding-bottom: 50px;
 }
-.col-2 p{
-    font-size: 30px;
-}
-.row-index p{
-    font-size: 40px;
-    font-weight: bolder;
-}
 .btn {
     cursor: pointer !important;
+    height: 60px;
+    width: 300px;
   }
 .headercol .btn {
-    margin-top: 50px;
+    margin-top: 0px;
+}
+.title-container{
+    background: #4a4a4ac1;
+    width: 300px;
+    height: 500px;
+    position: relative;
+    text-align: center;
+    padding: 20px, 0;
+    margin: auto;
+    box-shadow: 0px 20px 200px 0px rgba(0, 0, 0, 0.549);
+    overflow: hidden;
 }
 
 /*------media query for less than 1000 screen size------*/
