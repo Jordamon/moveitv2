@@ -1,4 +1,4 @@
-import React, { createContext, useState, useCallback } from 'react';
+import React, { useEffect, createContext, useState, useCallback } from 'react';
 
 export const CartContext = createContext();
 
@@ -41,6 +41,14 @@ export const CartProvider = ({ children }) => {
     let cartIcon = document.getElementById('cartAmount');
     cartIcon.innerHTML = totalItems;
   }, [basket]);
+
+  useEffect(() => {
+    // Update the cart amount whenever the basket changes
+    updateCartAmount();
+
+    // Save the basket to localStorage
+    localStorage.setItem('data', JSON.stringify(basket));
+  }, [basket, updateCartAmount]);
 
   const setSize = useCallback((id, size) => {
     setBasket((prevBasket) => {
