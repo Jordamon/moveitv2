@@ -1,14 +1,11 @@
 import React from 'react'
-import './Header.css';
+import HEADERCSS from './Header.module.css';
 
 function Header () {
     return (
-        <div className='home'>
-                <div className="row index">
-                        {/* <div className="col-2">
-                            <img src={require("../../images/shoe-transparent-background-20.png")} alt="" className="banner-img"/>
-                        </div> */}
-                        <div className="headercol title-container">
+        <div className={HEADERCSS.home}>
+                <div className={HEADERCSS.index}>
+                        <div className={`${HEADERCSS.headercol} ${HEADERCSS.titleContainer}`}>
                             <h1>KEEP IT MOVING.<br/> WE'RE ON ANOTHER LEVEL.</h1>
                         </div>
                     </div>
