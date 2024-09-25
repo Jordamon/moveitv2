@@ -10,9 +10,9 @@ function Featured () {
             <div className="catagories">
                 <div className="small-container">
                     <div className="row">
+                        <div className="col-3"><img src={require("../../images/Products/Womens/TRAINING CAMI TANK/TRAINING CAMI TANK1.webp")} alt="" className='img-class'/></div>
                         <div className="col-3"><img src={require("../../images/Products/Men's/SPORT SEAMLESS 1:4 ZIP/SPORT SEAMLESS 1:4 ZIP.webp")} alt="" className='img-class' /></div>
                         <div className="col-3"><img src={require("../../images/Products/Womens/TRAINING OVERSIZED JUMPER/TRAINING OVERSIZED SWEATSHIRT1.webp")} alt="" className='img-class'/></div>
-                        <div className="col-3"><img src={require("../../images/Products/Other/WATER BOTTLE/1.3L WATER BOTTLE1.webp")} alt="" className='img-class'/></div>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@ function Featured () {
                             <Button
                             className='btns'
                             buttonStyle='btn--outline'
-                            buttonSize='btn--large'
+                            buttonSize='btn--medium'
                             >
                             BUY NOW
                             </Button>
