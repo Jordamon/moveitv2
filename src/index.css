@@ -1,0 +1,10 @@
+html {
+    font-size: 16px;
+}
+.fa, .faQuoteLeft {
+    font-size: 34px;
+    color: #9fc6d8;
+}
+.rating .fa {
+    color: #9fc6d8;
+}

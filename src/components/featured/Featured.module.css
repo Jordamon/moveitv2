@@ -5,11 +5,11 @@
     flex-direction: column;
 }
 .row{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
- }
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   justify-content: space-around;
+}
 
 .categories {
     margin: 70px 0;
@@ -96,10 +96,6 @@ h4 {
     font-size: 14px;
 }
 
-.rating .fa {
-    color: #9fc6d8;
-}
-
 .col4:hover {
     transform: translateY(5px);
 }
@@ -160,11 +156,6 @@ small {
 
 .testimonial .col3:hover {
     transform: translateY(-10px);
-}
-
-.fa.faQuoteLeft {
-    font-size: 34px;
-    color: #9fc6d8;
 }
 
 .col3 p {
@@ -250,5 +241,11 @@ small {
 
     .offerText h1 {
         margin-left: 180px;
+    }
+    .categories:after {
+        display: none;
+    }
+    .title:after {
+        display: none;
     }
 }

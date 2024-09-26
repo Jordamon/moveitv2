@@ -1,7 +1,7 @@
 /* global Email */
 import React from 'react';
 import shoeImage from '../../images/shoe-transparent-background-20.png';
-import './ContactUs.css';
+import CONTACTUSCSS from './ContactUs.module.css'; // Update to use CSS module
 
 const ContactUs = () => {
   function sendEmail() {
@@ -20,17 +20,8 @@ const ContactUs = () => {
   };
 
   return (
-    <div>
-      <div className="contact-page">
-        <div className="container1">
-          <div className="row">
-            <div className="col-2 img-col">
-              <div className="account-shoes">
-                <img src={shoeImage} alt="Shoe" />
-              </div>
-            </div>
-            <div className="col-2">
-              <div className="contact-container">
+      <div className={CONTACTUSCSS.contactPage}>
+              <div className={CONTACTUSCSS.contactContainer}>
                 <form onSubmit={sendEmail}>
                   <h3>GET IN TOUCH</h3>
                   <input type="text" id="name" placeholder="Your Name" required />
@@ -39,12 +30,8 @@ const ContactUs = () => {
                   <textarea id="message" rows="4" placeholder="How can we help?"></textarea>
                   <button type="submit">Send</button>
                 </form>
-              </div>
-            </div>
           </div>
         </div>
-      </div>
-    </div>
   );
 };
 
