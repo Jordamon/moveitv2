@@ -1,23 +1,23 @@
 import React from 'react';
-import './Footer.css';
+import FOOTERCSS from './Footer.module.css';
 
 function Footer() {
   return (
-    <div className="footer">
-      <div className="container">
-        <div className="row">
-          <div className="footer-col-1">
+    <div className={FOOTERCSS.footer}>
+      <div className={FOOTERCSS.container}>
+        <div className={FOOTERCSS.row}>
+          <div className={FOOTERCSS.footerCol1}>
             <h3>Download Our App</h3>
             <p>Download app for android and ios smartphones.</p>
-            <div className="app-logo">
+            <div className={FOOTERCSS.appLogo}>
               <img src={require("../../images/Logos/app-store-logos.png")} alt="" />
             </div>
           </div>
-          <div className="footer-col-2">
+          <div className={FOOTERCSS.footerCol2}>
             <img src={require("../../images/Logos/logo.avif")} alt="" />
             <p>Our purpose to provide you with a fit that is stylish and comfortable so nothing holds you back from the grind.</p>
           </div>
-          <div className="footer-col-3">
+          <div className={FOOTERCSS.footerCol3}>
             <h3>Useful Links</h3>
             <ul>
               <li>Coupons</li>
@@ -26,7 +26,7 @@ function Footer() {
               <li>Join Affiliate</li>
             </ul>
           </div>
-          <div className="footer-col-4">
+          <div className="{FOOTERCSS.footerCol4}">
             <h3>Socials</h3>
             <ul>
               <li>Facebook</li>
@@ -37,7 +37,7 @@ function Footer() {
           </div>
         </div>
         <hr />
-        <p className="copyright">Copyright 2023 - Cody Coding</p>
+        <p className={FOOTERCSS.copyright}>Copyright 2023 - Cody Coding</p>
       </div>
     </div>
   );

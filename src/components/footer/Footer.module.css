@@ -6,53 +6,55 @@
     margin-top: auto;
     height: 400px;
  }
- .footer p{
-    color: black;
- }
  .footer h3{
-    color: black;
     margin-bottom: 20px;
  }
- .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+ .footerCol1, .footerCol2, .footerCol3, .footerCol4{
     min-width: 250px;
     margin-bottom: 20px;
  } 
- .footer-col-1{
+ .footerCol1{
     flex-basis: 30%;
     text-align: center;
  }
- .footer-col-2{
+ .footerCol2{
     flex: 1;
     text-align: center;
  }
- .footer-col-2 img{
+ .footerCol2 img{
     width: 180px;
     margin-bottom: 20px;
  }
- .footer-col-3, .footer-col-4{
+ .footerCol3, .footerCol4{
     flex-basis: 12%;
     text-align: center;
  }
+ .row{
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   justify-content: space-around;
+}
  ul{
     list-style-type: none;
  }
-.app-logo{
+.appLogo{
     margin-top: 10px;
 }
-.app-logo img{
+.appLogo img{
     width: 140px;
 }
 .footer hr{
     border: none;
     background: black;
-    height: 1px;
+    height: 2px;
     margin: 20px 0;
     width: 100%;
 }
 .copyright{
     text-align: center;
 }
-.menu-icon{
+.menuIcon{
     width: 28px;
     margin-left: 20px;
     display: none;
@@ -60,5 +62,6 @@
 @media screen and (max-width: 500px){
    .footer{
       height: 800px;
+      flex-direction: column;
    }
 }
