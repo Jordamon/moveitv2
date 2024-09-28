@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import ShopItemsData from '../shop/Data.jsx';
-import './ProductDetails.css';
+import PRODUCTDETAILSCSS from './ProductDetails.module.css';
 import { CartContext } from '../cartContext/CartContext';
 
 const SingleProductDetails = ({ id }) => {
@@ -21,19 +21,15 @@ const SingleProductDetails = ({ id }) => {
       return;
     }
 
-    // Find the item in the cart, if it exists
     const existingItemIndex = basket.findIndex((item) => item.id === id && item.size === selectedSize);
     if (existingItemIndex === -1) {
-      // If the item is not in the cart, add it with the selected quantity and size
       increment(id, selectedQuantity, selectedSize);
     } else {
-      // If the item is already in the cart, update its quantity with the selected quantity
       const updatedBasket = [...basket];
       updatedBasket[existingItemIndex].quantity += selectedQuantity;
       setBasket(updatedBasket);
     }
 
-    // Clear any previous error messages
     setErrorMessage('');
   };
 
@@ -43,67 +39,66 @@ const SingleProductDetails = ({ id }) => {
   }, [basket, updateCartAmount]);
 
   return (
-    <div className='product-details-container'>
+    <div className={PRODUCTDETAILSCSS.productDetailsContainer}>
       {product ? (
-        <div className="small-container single-product">
-          <div className="row">
-            <div className="col-2 img-col">
+        <div className={PRODUCTDETAILSCSS.smallContainer}>
+          <div className={PRODUCTDETAILSCSS.row}>
+            <div className={PRODUCTDETAILSCSS.col2} id="imgCol">
               <img
                 src={product.img}
-                className="main-product-img"
+                className={PRODUCTDETAILSCSS.mainProductImg}
                 id="ProductImg"
                 alt={product.name}
                 width="100%"
               />
-              <div className="small-img-row">
-                {/* Render smaller images */}
+              <div className={PRODUCTDETAILSCSS.smallImgRow}>
                 {product.img && (
-                  <div className="small-img-col">
+                  <div className={PRODUCTDETAILSCSS.smallImgCol}>
                     <img
                       src={product.img}
                       alt={product.name}
                       width="100%"
-                      className="small-img"
+                      className={PRODUCTDETAILSCSS.smallImg}
                       onClick={() => changeImage(product.img)}
                     />
                   </div>
                 )}
                 {product.img2 && (
-                  <div className="small-img-col">
+                  <div className={PRODUCTDETAILSCSS.smallImgCol}>
                     <img
                       src={product.img2}
                       alt={product.name}
                       width="100%"
-                      className="small-img"
+                      className={PRODUCTDETAILSCSS.smallImg}
                       onClick={() => changeImage(product.img2)}
                     />
                   </div>
                 )}
                 {product.img3 && (
-                  <div className="small-img-col">
+                  <div className={PRODUCTDETAILSCSS.smallImgCol}>
                     <img
                       src={product.img3}
                       alt={product.name}
                       width="100%"
-                      className="small-img"
+                      className={PRODUCTDETAILSCSS.smallImg}
                       onClick={() => changeImage(product.img3)}
                     />
                   </div>
                 )}
                 {product.img4 && (
-                  <div className="small-img-col">
+                  <div className={PRODUCTDETAILSCSS.smallImgCol}>
                     <img
                       src={product.img4}
                       alt={product.name}
                       width="100%"
-                      className="small-img"
+                      className={PRODUCTDETAILSCSS.smallImg}
                       onClick={() => changeImage(product.img4)}
                     />
                   </div>
                 )}
               </div>
             </div>
-            <div className="pro-details-col-2">
+            <div className={PRODUCTDETAILSCSS.proDetailsCol2}>
               <p>{product.category}</p>
               <h1>{product.name}</h1>
               <h4>£{product.price}</h4>
@@ -131,17 +126,16 @@ const SingleProductDetails = ({ id }) => {
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
-                {/* Add more options based on your requirement */}
               </select>
               {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-              <button className='btn--primary addbtn' onClick={handleAddToCart}>Add To Cart</button>
-              <div className="prodetails">
-              <h3>
-                Product Details <i className="fa fa-indent"></i>
-              </h3>
-              <br />
-              <p>{product.description}</p>
-            </div>
+              <button className={`${PRODUCTDETAILSCSS.btnPrimary} ${PRODUCTDETAILSCSS.addBtn}`} onClick={handleAddToCart}>Add To Cart</button>
+              <div className={PRODUCTDETAILSCSS.proDetails}>
+                <h3>
+                  Product Details <i className="fa fa-indent"></i>
+                </h3>
+                <br />
+                <p>{product.description}</p>
+              </div>
             </div>
           </div>
         </div>

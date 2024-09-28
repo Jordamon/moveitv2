@@ -1,9 +1,8 @@
 import React from 'react';
-import './Button.css';
+import styles from './Button.module.css';  // Import as `styles` for scoped CSS
 import { Link } from 'react-router-dom';
 
 const STYLES = ['btn--primary', 'btn--outline'];
-
 const SIZES = ['btn--medium', 'btn--large'];
 
 export const Button = ({
@@ -14,20 +13,22 @@ export const Button = ({
     buttonSize = 'btn--medium' 
 }) => {
     const checkButtonStyle = STYLES.includes(buttonStyle)
-    ? buttonStyle 
-    : STYLES[0];
+        ? styles[buttonStyle]  // Access CSS module class name
+        : styles[STYLES[0]];
 
-    const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
+    const checkButtonSize = SIZES.includes(buttonSize)
+        ? styles[buttonSize]
+        : styles[SIZES[0]];
 
     return (
-        <Link to='/Products' className='btn-mobile'>
+        <Link to='/Products' className={styles.btnMobile}> {/* Scoped class */}
             <button
-            className={`btn ${checkButtonStyle} ${checkButtonSize}`}
-            onClick={onClick}
-            type={type}
+                className={`${styles.btn} ${checkButtonStyle} ${checkButtonSize}`}
+                onClick={onClick}
+                type={type}
             >
                 {children}
             </button>
-            </Link>
-    )
+        </Link>
+    );
 };

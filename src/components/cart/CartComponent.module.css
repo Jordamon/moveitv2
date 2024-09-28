@@ -1,43 +1,47 @@
 /* style rules for shopping cart */
-.shopping-cart{
+.shoppingCart {
     display: grid;
     grid-template-columns: repeat(1, 320px);
     justify-content: center;
     gap: 15px;
     margin-bottom: 50px;
 }
-.cart-item{
+.cartItem {
     border: 2px solid black;
     border-radius: 5px;
     display: flex;
 }
-.title-price-x{
+.titlePriceX {
     width: 195px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.title-price{
+.titlePrice {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.cart-item-price{
+.cartItemPrice {
     background-color: #212529;
     color: white;
-    padding: 3px, 6px;
+    padding: 3px 6px;
     border-radius: 4px;
 }
-.buttons{
+.buttons {
     display: flex;
     gap: 10px;
 }
+label {
+    display: block;
+    margin-bottom: 10px;
+  }
 /* style rules for label and some buttons in cart */
-.text-center{
+.textCenter {
     text-align: center;
     margin-bottom: 20px;
 }
-.HomeBtn, .checkout,.removeAll{
+.homeBtn, .checkout, .removeAll {
     color: white;
     border: none;
     padding: 6px;
@@ -45,17 +49,17 @@
     border-radius: 3px;
     margin-top: 10px;
 }
-.checkout{
-    background-color: #9fcf9f;
+.checkout {
+    background-color: #67d367;
 }
-.removeAll{
+.removeAll {
     background-color: red;
 }
-.bi-x-lg{
+.biXLg {
     color: red;
     font-weight: bold;
     cursor: pointer;
 }
-.check-clear{
+.checkClear {
     margin: 10px;
 }

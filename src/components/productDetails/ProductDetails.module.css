@@ -1,87 +1,106 @@
-.product-details-container{
+.productDetailsContainer {
     margin-top: 80px;
-}
-.single-product{
+  }
+  
+  .singleProduct {
     margin-top: 80px;
     padding-top: 70px;
-}
-.single-product .main-product-img{
+  }
+  
+  .mainProductImg {
     height: 400px;
     width: 400px;
-}
-.single-product .col-2 img{
+  }
+  
+  .col2 img {
     padding: 0;
-}
-.single-product .col-2{
-    padding: 0px;
-}
-.single-product h4{
+  }
+  
+  .col2 {
+    padding: 0;
+  }
+  
+  .singleProductH4 {
     margin: 20px 0;
     font-size: 22px;
     font-weight: bold;
-}
-.single-product select{
+  }
+  
+  .select {
     display: block;
     padding: 10px;
     margin-top: 20px;
-}
-.single-product input{
+  }
+  
+  .input {
     width: 50px;
     height: 40px;
     padding-left: 10px;
     font-size: 20px;
-    margin-right: 0px;
+    margin-right: 0;
     border: 1px solid #9fc6d8;
-}
-input:focus{
+  }
+  
+  .input:focus {
     outline: none;
-}
-.single-product .fa{
+  }
+  
+  .fa {
     color: #9fc6d8;
     margin-left: 5px;
-}
-.small-img-row{
+  }
+  
+  .smallImgRow {
     display: flex;
     justify-content: space-between;
-}
-.small-img-col{
+  }
+  
+  .smallImgCol {
     flex-basis: 24%;
     cursor: pointer;
     padding: 10px 0;
-}
-.img-col{
+  }
+  
+  .imgCol {
     display: flex;
     flex-wrap: wrap;
-}
-.small-img-col img{
+  }
+  
+  .smallImgCol img {
     width: 100px;
     height: 100px;
-}
-.small-container{
+  }
+  
+  .smallContainer {
     max-width: 1080px;
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
-}
-.row{
+  }
+  
+  .row {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
-}
-.pro-details-col-2{
+  }
+  
+  .proDetailsCol2 {
     flex-basis: 50%;
     min-width: 300px;
     position: relative;
     bottom: 100px;
     display: flex;
     flex-direction: column;
-}
-.addbtn{
+  }
+  
+  .addbtn {
     margin-top: 30px;
     height: 30px;
-}
-.prodetails{
-   display: flex;
-   margin-top: 20px;
-}
+  }
+  
+  .prodetails {
+    display: flex;
+    margin-top: 20px;
+  }
+  
