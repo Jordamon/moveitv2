@@ -8,7 +8,6 @@ function Footer() {
         <div className={FOOTERCSS.row}>
           <div className={FOOTERCSS.footerCol1}>
             <h3>Download Our App</h3>
-            <p>Download app for android and ios smartphones.</p>
             <div className={FOOTERCSS.appLogo}>
               <img src={require("../../images/Logos/app-store-logos.png")} alt="" />
             </div>
