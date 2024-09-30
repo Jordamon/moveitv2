@@ -1,7 +1,7 @@
 .contactPage {
     padding: 50px 0; /* Note: Comma should be changed to space */
     background-image: linear-gradient(rgba(255, 249, 249, 0.184), rgba(62, 61, 61, 0.75)), url("../../images/Background.jpg");
-    height: 800px;
+    height: 90vh;
     background-size: cover;
     display: flex;
     justify-content: center;

@@ -12,9 +12,14 @@ function Footer() {
               <img src={require("../../images/Logos/app-store-logos.png")} alt="" />
             </div>
           </div>
-          <div className={FOOTERCSS.footerCol2}>
-            <img src={require("../../images/Logos/logo.avif")} alt="" />
-            <p>Our purpose to provide you with a fit that is stylish and comfortable so nothing holds you back from the grind.</p>
+          <div className={FOOTERCSS.footerCol4}>
+            <h3>Socials</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+              <li>Youtube</li>
+            </ul>
           </div>
           <div className={FOOTERCSS.footerCol3}>
             <h3>Useful Links</h3>
@@ -25,18 +30,13 @@ function Footer() {
               <li>Join Affiliate</li>
             </ul>
           </div>
-          <div className="{FOOTERCSS.footerCol4}">
-            <h3>Socials</h3>
-            <ul>
-              <li>Facebook</li>
-              <li>Twitter</li>
-              <li>Instagram</li>
-              <li>Youtube</li>
-            </ul>
+          <div className={FOOTERCSS.footerCol2}>
+            <img src={require("../../images/Logos/logo.avif")} alt="" />
+            <p>Our purpose to provide you with a fit that is stylish and comfortable so nothing holds you back from the grind.</p>
           </div>
         </div>
         <hr />
-        <p className={FOOTERCSS.copyright}>Copyright 2023 - Cody Coding</p>
+        <p className={FOOTERCSS.copyright}>Copyright 2023 - Jordamon</p>
       </div>
     </div>
   );

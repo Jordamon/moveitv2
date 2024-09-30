@@ -1,7 +1,6 @@
 /* global Email */
 import React from 'react';
-import shoeImage from '../../images/shoe-transparent-background-20.png';
-import CONTACTUSCSS from './ContactUs.module.css'; // Update to use CSS module
+import CONTACTUSCSS from './ContactUs.module.css';
 
 const ContactUs = () => {
   function sendEmail() {

@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import ShopItemsData from '../shop/Data.jsx';
-import PRODUCTDETAILSCSS from './ProductDetails.module.css';
 import { CartContext } from '../cartContext/CartContext';
+import PRODUCTDETAILSCSS from './ProductDetails.module.css';
 
 const SingleProductDetails = ({ id }) => {
   const [selectedQuantity, setSelectedQuantity] = useState(1);
@@ -128,14 +128,16 @@ const SingleProductDetails = ({ id }) => {
                 <option value="5">5</option>
               </select>
               {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-              <button className={`${PRODUCTDETAILSCSS.btnPrimary} ${PRODUCTDETAILSCSS.addBtn}`} onClick={handleAddToCart}>Add To Cart</button>
-              <div className={PRODUCTDETAILSCSS.proDetails}>
+              <div className={PRODUCTDETAILSCSS.addToCartBtn}>
+              <button className={PRODUCTDETAILSCSS.frog}onClick={handleAddToCart}>Add To Cart</button>
+              </div>
+              {/* <div className={PRODUCTDETAILSCSS.proDetails}>
                 <h3>
                   Product Details <i className="fa fa-indent"></i>
                 </h3>
                 <br />
                 <p>{product.description}</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
