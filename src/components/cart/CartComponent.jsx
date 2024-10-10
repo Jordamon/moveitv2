@@ -63,7 +63,7 @@ const CartComponent = ({ shippingCost = 0 }) => {
             <i onClick={() => increment(id, 1, size)} className="bi bi-plus-lg"></i>
           </div>
 
-          <h3>Total: £ {quantity * price}</h3>
+          <h4>Subtotal: £ {quantity * price}</h4>
         </div>
       </div>
     );
@@ -84,18 +84,22 @@ const CartComponent = ({ shippingCost = 0 }) => {
   }, [basket, updateCartAmount]);
 
   return (
-    <div>
+    <div className={CARTCOMPONENTCSS.h1cart}>
+    <h1>Your Cart</h1>
+    <div className={CARTCOMPONENTCSS.row}>
       {basket.length > 0 ? (
-        <div className={`${CARTCOMPONENTCSS.label} ${CARTCOMPONENTCSS.textCenter}`}>
+        <div className={`${CARTCOMPONENTCSS.textCenter} ${CARTCOMPONENTCSS.col1}`}>
           <h2>Total Bill: £ {totalBill}</h2>
           <p>Shipping: £ {shippingCost}</p>
           <p>{totalItems} {itemsText}</p>
+          <div className="links">
           <Link to="/CheckoutPage">
             <button className={`${CARTCOMPONENTCSS.checkout} ${CARTCOMPONENTCSS.checkClear}`}>Checkout</button>
           </Link>
           <button onClick={clearCart} className={`${CARTCOMPONENTCSS.removeAll} ${CARTCOMPONENTCSS.checkClear}`}>
             Clear Cart
           </button>
+          </div>
         </div>
       ) : (
         <div className={`${CARTCOMPONENTCSS.label} ${CARTCOMPONENTCSS.textCenter}`}>
@@ -110,6 +114,7 @@ const CartComponent = ({ shippingCost = 0 }) => {
           <CartItem key={`${item.id}-${item.size}`} {...item} />
         ))}
       </div>
+    </div>
     </div>
   );
 };
