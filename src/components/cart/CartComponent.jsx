@@ -84,8 +84,8 @@ const CartComponent = ({ shippingCost = 0 }) => {
   }, [basket, updateCartAmount]);
 
   return (
-    <div className={CARTCOMPONENTCSS.h1cart}>
-    <h1>Your Cart</h1>
+    <div>
+    <h1 className={CARTCOMPONENTCSS.h1cart}>Your Cart</h1>
     <div className={CARTCOMPONENTCSS.row}>
       {basket.length > 0 ? (
         <div className={`${CARTCOMPONENTCSS.textCenter} ${CARTCOMPONENTCSS.col1}`}>

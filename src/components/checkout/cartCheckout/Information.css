@@ -5,6 +5,10 @@
     justify-content: center;
     margin: auto;
 }
+.info h1:after {
+    top: 45%;
+    width: 40%;
+}
 .checkoutContact{
     width: 80%;
     display: flex;

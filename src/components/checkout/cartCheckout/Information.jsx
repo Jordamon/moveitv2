@@ -6,7 +6,7 @@ import CartComponent from '../../cart/CartComponent';
 
 const CartCheckout = ({onNext, onPrevious}) => {
   return (
-    <div>
+    <div className='info'>
         <div className='stage-container-icons'>
             <div className='info-column icolumn'>
             <i className='fa-solid fa-info icon'></i>
