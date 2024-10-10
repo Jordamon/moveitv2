@@ -71,10 +71,10 @@ const Shipping = ({ onNext, onPrevious, shippingCost, setShippingCost }) => {
           </div>
           <div className='checkoutNavBtns'>
                 <div className='checkoutNavBtn1'>
-                    <button className='btn btn--medium btn--primary checkoutNav'onClick={onPrevious}>Previous</button>
+                    <button className='checkoutBtn'onClick={onPrevious}>Previous</button>
                     </div>
                     <div className='checkoutNavBtn2'>
-                    <button className='btn btn--medium btn--primary checkoutNav' onClick={onNext}>Next</button>
+                    <button className='checkoutBtn' onClick={onNext}>Next</button>
                     </div>
             </div>
         </div>
