@@ -51,6 +51,40 @@ const SingleProductDetails = ({ id }) => {
                 alt={product.name}
                 width="100%"
               />
+              </div>
+            <div className={PRODUCTDETAILSCSS.proDetailsCol2}>
+              <p>{product.category}</p>
+              <h1>{product.name}</h1>
+              <h4>£{product.price}</h4>
+              <select
+                name="size"
+                id="size"
+                value={selectedSize}
+                onChange={(e) => setSelectedSize(e.target.value)}
+              >
+                <option value="">Select Size</option>
+                <option value="XXL">XXL</option>
+                <option value="XL">XL</option>
+                <option value="L">L</option>
+                <option value="M">M</option>
+                <option value="S">S</option>
+              </select>
+              <select
+                name="quantity"
+                id="quantity"
+                value={selectedQuantity}
+                onChange={(e) => setSelectedQuantity(parseInt(e.target.value))}
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+              <div className={PRODUCTDETAILSCSS.addToCartBtn}>
+              <button className={PRODUCTDETAILSCSS.frog}onClick={handleAddToCart}>Add To Cart</button>
+              </div>
               <div className={PRODUCTDETAILSCSS.smallImgRow}>
                 {product.img && (
                   <div className={PRODUCTDETAILSCSS.smallImgCol}>
@@ -95,42 +129,9 @@ const SingleProductDetails = ({ id }) => {
                       onClick={() => changeImage(product.img4)}
                     />
                   </div>
+                  
                 )}
-              </div>
-            </div>
-            <div className={PRODUCTDETAILSCSS.proDetailsCol2}>
-              <p>{product.category}</p>
-              <h1>{product.name}</h1>
-              <h4>£{product.price}</h4>
-              <select
-                name="size"
-                id="size"
-                value={selectedSize}
-                onChange={(e) => setSelectedSize(e.target.value)}
-              >
-                <option value="">Select Size</option>
-                <option value="XXL">XXL</option>
-                <option value="XL">XL</option>
-                <option value="L">L</option>
-                <option value="M">M</option>
-                <option value="S">S</option>
-              </select>
-              <select
-                name="quantity"
-                id="quantity"
-                value={selectedQuantity}
-                onChange={(e) => setSelectedQuantity(parseInt(e.target.value))}
-              >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-              {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-              <div className={PRODUCTDETAILSCSS.addToCartBtn}>
-              <button className={PRODUCTDETAILSCSS.frog}onClick={handleAddToCart}>Add To Cart</button>
-              </div>
+                </div>
               {/* <div className={PRODUCTDETAILSCSS.proDetails}>
                 <h3>
                   Product Details <i className="fa fa-indent"></i>
