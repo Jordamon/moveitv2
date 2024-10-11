@@ -1,5 +1,6 @@
 .progressIndicator{
     position: absolute;
-    top: 1000px;
-    left: 190px;
+    top: 1100px;
+    left: 0px;
+    padding: 2%;
 }

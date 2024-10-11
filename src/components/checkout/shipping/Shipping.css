@@ -9,7 +9,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
 }
 h2{
     font-size: 20px;
@@ -20,6 +19,7 @@ h3{
 }
 .shippingOption{
   width: 100%;
+  margin: 10%;
 }
 .shippingDetails{
   display: flex;
@@ -47,7 +47,8 @@ h3{
   justify-content: center;
 }
 .cartPreview{
-  margin: 20px;
+  margin-left: 10px;
+  height: 100%;
 }
 label {
   display: block;

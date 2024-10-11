@@ -89,7 +89,7 @@ const CartComponent = ({ shippingCost = 0 }) => {
     <div className={CARTCOMPONENTCSS.row}>
       {basket.length > 0 ? (
         <div className={`${CARTCOMPONENTCSS.textCenter} ${CARTCOMPONENTCSS.col1}`}>
-          <h2>Total Bill: £ {totalBill}</h2>
+          <h2>Total Bill: <br/>£ {totalBill}</h2>
           <p>Shipping: £ {shippingCost}</p>
           <p>{totalItems} {itemsText}</p>
           <div className="links">

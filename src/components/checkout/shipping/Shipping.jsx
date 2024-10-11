@@ -79,9 +79,10 @@ const Shipping = ({ onNext, onPrevious, shippingCost, setShippingCost }) => {
             </div>
         </div>
 
-            <div className='cartPreview'>
-            <CartComponent shippingCost={shippingCost}/>
-            </div>
+        <div className='cartPreview'>
+          <CartComponent shippingCost={shippingCost}  />
+        </div>
+
         </div>
         </div>
         </div>
