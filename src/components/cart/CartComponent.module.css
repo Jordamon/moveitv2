@@ -1,6 +1,6 @@
 /* style rules for shopping cart */
-h1 {
-    margin: 3%;
+.h1cart{
+    margin-left: 110px;
 }
 
 /* .h1cart:after {
@@ -37,6 +37,7 @@ h1 {
     align-items: center;
     margin: 3%;
     border: solid 2px #9fc6d8;
+    min-width: 40%;
 }
 .cartItem {
     border: 1px solid rgba(0, 0, 0, 0.206);

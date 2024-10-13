@@ -91,8 +91,9 @@
     height: auto;
     display: grid;
     grid-template-columns: repeat(1, 320px) !important;
-    justify-content: center;
+    justify-content: start;
     gap: 15px;
+    max-width: 450px;
 }
 .cartPreview button{
     display: none;

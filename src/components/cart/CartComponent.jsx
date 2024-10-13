@@ -84,7 +84,7 @@ const CartComponent = ({ shippingCost = 0 }) => {
   }, [basket, updateCartAmount]);
 
   return (
-    <div>
+    <div className='CARTCOMPONENTCSS.cartContainer'>
     <h1 className={CARTCOMPONENTCSS.h1cart}>Your Cart</h1>
     <div className={CARTCOMPONENTCSS.row}>
       {basket.length > 0 ? (
