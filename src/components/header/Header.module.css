@@ -6,6 +6,9 @@
     padding: auto, 25px;
     margin: 0, auto;
     max-width: 100%;
+    max-height: 450px;
+    display: flex;
+    align-items: center;
 }
 .headercol h1{
     font-size: 150px;
@@ -23,27 +26,18 @@
     justify-content: center;
     align-items: center;
     padding-top: 0%;
+    max-height: 10%;
 }
 
-/*------media query for less than 1150 screen size------*/
-@media only screen and (max-width: 1150px){
-    .home{
-        height: 35vh;
-    }
-    .headercol p {
-        display: none;
-    }
+/*------media query for more than 1150 screen size------*/
+@media only screen and (min-width: 1150px){
     .headercol h1{
-        font-size: 110px;
-        width: 100%;
-    }
-    .headercol .col-2{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        font-size: 180px;
+        line-height: 150px;
     }
 }
-/*------media query for less than 850 screen size------*/
+
+/*------media query for more than 850 screen size------*/
 @media only screen and (max-width: 850px){
     .home{
         height: 35vh;
@@ -61,11 +55,31 @@
         align-items: center;
     }
 }
+
+/*------media query for screen sizes between 600px and 850px------*/
+@media only screen and (min-width: 501px) and (max-width: 850px) {
+    .home {
+        height: 35vh; /* Adjust the height as needed */
+    }
+    .headercol p {
+        display: none; /* Keep paragraph hidden */
+    }
+    .headercol h1 {
+        font-size: 90px; /* Font size for header */
+        width: 100%; /* Full width */
+    }
+    .headercol .col-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
   
-/*------media query for less than 600 screen size------*/
-@media only screen and (max-width: 700px){
+/*------media query for less than 500 screen size------*/
+@media only screen and (max-width: 500px){
     .home{
-        height: 20vh;
+        height: 30vh;
         /* position: absolute; */
         top: 80px;
         width: 100%;
