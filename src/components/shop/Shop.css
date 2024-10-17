@@ -7,7 +7,6 @@
 select{
     border: 1px solid #9fc6d8;
     padding: 5px;
-
 }
 select:focus{
     outline: none;
@@ -111,19 +110,29 @@ select:focus{
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 551px) and (max-width: 768px) {
   .col-4 {
     flex-basis: calc(50% - 30px);
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 550px) {
+  .shop{
+    padding: 5%;
+  }
   .col-4 {
     flex-basis: 100%;
   }
-}
 .single-product select{
     display: block;
     padding: 10px;
     margin-top: 20px;
+}
+.select-container{
+  display: flex;
+  flex-direction: column;
+}
+.row-2{
+  margin: 10%;
+}
 }

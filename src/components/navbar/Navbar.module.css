@@ -43,7 +43,7 @@
   text-align: center;
   width: 60vw;
   justify-content: end;
-  margin-left: 290px;
+  margin-left: 20%;
 }
 
 .navItem {
@@ -227,15 +227,15 @@
 
 .navbarLogo {
     width: 60vw;
-    height: 10vh;
-    margin-left: 5px;
+    height: 4vh;
+    margin: 1% 0 0 1%;
 }
 
 .menuIcons {
     display: inline-block;
     position: absolute;
     top: 0;
-    right: 70px;
+    right: 60px;
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;

@@ -62,9 +62,10 @@ ul {
    margin-left: 20px;
    display: none;
 }
-@media screen and (max-width: 500px) {
-   .footer {
-      height: 800px;
+@media screen and (max-width: 400px) {
+   .footerCol1, .footerCol2, .footerCol3, .footerCol4 {
+      height: 100%;
       flex-direction: column;
+      flex-basis: 100%;
    }
 }
