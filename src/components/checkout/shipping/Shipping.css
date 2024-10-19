@@ -76,3 +76,9 @@ input[type="checkbox"]:checked {
   align-items: center;
   margin-right: 5px;
 }
+
+@media screen and (max-width: 700px) {
+  .shippingDetails{
+    flex-direction: column;
+  }
+}

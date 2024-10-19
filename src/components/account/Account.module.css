@@ -1,5 +1,5 @@
 .accountPage {
-  padding: 10% 0 0 0;
+  padding: 0 0 0 0;
   background-image: linear-gradient(rgba(255, 249, 249, 0.184), rgba(62, 61, 61, 0.75)), url("../../images/Background.jpg");
   height: 80vh;
   background-size: cover;
@@ -11,7 +11,7 @@
 
 .background {
   width: 40%;
-  height: 50%;
+  height: 70%;
   background-color: white;
   border-radius: 30px;
   display: flex;
@@ -158,10 +158,10 @@ hr {
       width: 100%;
   }
   .background{
-    width: 80%;
-    height: 50%;
+    width: 70%;
+    height: 80%;
   }
   .accountPage {
-      height: 800px;
+      height: 80vh;
   }
 }

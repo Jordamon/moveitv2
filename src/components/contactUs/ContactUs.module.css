@@ -1,7 +1,7 @@
 .contactPage {
     padding: 50px 0; /* Note: Comma should be changed to space */
     background-image: linear-gradient(rgba(255, 249, 249, 0.184), rgba(62, 61, 61, 0.75)), url("../../images/Background.jpg");
-    height: 70vh;
+    height: 90vh;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -11,7 +11,7 @@
 .formContainer {
     background: #fff;
     width: 300px;
-    height: 350px;
+    height: 80vh;
     position: relative;
     text-align: center;
     padding: 20px 0; /* Note: Comma should be changed to space */
@@ -70,7 +70,7 @@ form a {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 40px;
+    padding-top: 0px;
 }
 
 .contactContainer form {
@@ -112,12 +112,12 @@ form textarea {
     border-radius: 30px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 800px) {
     .contactContainer {
         padding-top: 0;
         margin-top: 0;
     }
     .contactPage {
-        height: 550px;
+        height: 80vh;
     }
 }

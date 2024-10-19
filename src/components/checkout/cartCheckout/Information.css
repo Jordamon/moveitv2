@@ -27,6 +27,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 .personalDetails{
@@ -38,7 +39,7 @@
     z-index: 1;
 }
 .personalDetails form {
-    width: 50%;
+    width: 40%;
     margin: 5%;
 }
 .paypal{
@@ -53,11 +54,10 @@
     color: #9fc6d8;
 }
 .stage-container-icons{
-    width: 50%;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: auto;
 }
 .icon{
     color: #9fc6d8;
@@ -91,7 +91,7 @@
     height: auto;
     display: grid;
     grid-template-columns: repeat(1, 320px) !important;
-    justify-content: start;
+    justify-content: center;
     gap: 15px;
     max-width: 450px;
 }
@@ -123,4 +123,38 @@
 }
 .stage-container-icons h2{
     font-size: 20px;
+}
+
+@media screen and (max-width: 700px) {
+    .personalDetails {
+        flex-direction: column;
+        align-items: center;
+    }
+    .checkoutContact{
+        flex-direction: column;
+        margin-top: 5%;
+    }
+    .shippingDetails{
+        flex-direction: column;
+    }
+    .emailContact{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 40px;
+    }
+    .country-select{
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 500px) {
+    .stage-container-icons h2 {
+        font-size: 15px;
+    }
+    .stage-container-icons i {
+        font-size: 30px;
+    }
+    .stage-container-icons .icolumn{
+        padding: 5px;
+    }
 }
