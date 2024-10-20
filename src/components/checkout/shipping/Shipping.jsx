@@ -12,7 +12,7 @@ const Shipping = ({ onNext, onPrevious, shippingCost, setShippingCost }) => {
 
   return (
     <div>
-      <div>
+      <div className='info'>
       <div className='stage-container-icons'>
             <div className='info-column icolumn'>
             <i className="fa-regular fa-circle-check icon"></i>
